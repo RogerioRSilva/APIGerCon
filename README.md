@@ -23,8 +23,6 @@ e visualizar um resumo das contas cadastradas.
 - [x] Deletar conta por ID
 - [x] Atualizar conta
 
-## Testes dos Endpoints
-
 ## Diagrama de Classes
 
 ```mermaid
