@@ -22,12 +22,6 @@ e visualizar um resumo das contas cadastradas.
 - [x] Buscar conta por ID
 - [x] Deletar conta por ID
 - [x] Atualizar conta
-- [ ] Relatorio de Contas Pagas
-- [ ] Relatorio de Contas Pendentes
-- [ ] Relatorio de Contas Vencidas
-- [ ] Relatorio de Contas a Pagar
-- [ ] Alerta de Contas Vencidas
-- [ ] Alerta de Contas a Vencer
 
 ## Testes dos Endpoints
 
