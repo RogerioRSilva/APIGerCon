@@ -1,12 +1,9 @@
 package br.com.gercon.domain.model;
 
 import br.com.gercon.domain.util.StatusConta;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
-@Entity
+@Entity(name = "tb_conta")
 public class Conta {
 
     @Id
@@ -17,7 +14,26 @@ public class Conta {
     private double valor;
     private String dataVencimento;
     private String dataPagamento;
+
+    @Enumerated(EnumType.STRING)
     private StatusConta statusConta;
+
+    @ManyToOne
+    @JoinColumn(name = "id_pessoa")
+    private Pessoa pessoa;
+
+    public Conta() {
+    }
+
+    public void cadastrarConta(String tipoConta, String descricao, double valor, String dataVencimento, String dataPagamento, StatusConta statusConta, Pessoa pessoa){
+        this.tipoConta = tipoConta;
+        this.descricao = descricao;
+        this.valor = valor;
+        this.dataVencimento = dataVencimento;
+        this.dataPagamento = dataPagamento;
+        this.statusConta = statusConta;
+        this.pessoa = pessoa;
+    }
 
     public Long getId() {
         return id;
@@ -73,5 +89,13 @@ public class Conta {
 
     public void setStatusConta(StatusConta statusConta) {
         this.statusConta = statusConta;
+    }
+
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
     }
 }
